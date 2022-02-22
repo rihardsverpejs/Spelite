@@ -4,6 +4,7 @@ var x_ass = 0;
 var y_ass = 0;
 var x_ass_pieaugums=0;
 var y_ass_pieaugums=0;
+var davanas_bilde = new Image();
 var BugImg = new Image();
 BugImg.src = "https://s2js.com/img/etc/ladybug.png";
 
