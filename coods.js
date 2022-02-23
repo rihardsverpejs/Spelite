@@ -13,7 +13,11 @@ davanas_bilde.src = "davanu.png"
 var snata = new Image();
 snata.src = "snata.png";
 
-
+function Sagraba(x_ass, y_ass, snata, davx_ass, davy_ass, davanas_bilde) {
+   if (x_ass >= davx_ass+davanas_bilde.width || x_ass+snata.width <= davx_ass) return false;
+   if (y_ass >= davy_ass+davanas_bilde.height || y_ass+snata.height <= davy_ass) return false;
+   return true;
+   }
 function paradies () {
    if (davana_eksiste==0){
       davana_eksiste = 1;
@@ -39,6 +43,10 @@ function paradies () {
    if (y_ass >= lauks.height-snata.height){
       y_ass= lauks.height-snata.height
    }
+   if (Sagraba(x_ass, y_ass, snata, davx_ass, davy_ass, davanas_bilde)) {
+      rezultats= + 1;
+      davx_ass= -davanas_bilde.width;
+      }
    } 
 
 setInterval(paradies, 25);
@@ -61,5 +69,4 @@ function iliketomoveit (wow) {
    davx_ass = lokacija(lauks.width - davanas_bilde.width);
    davy_ass = lokacija(lauks.height - davanas_bilde.height);
    } 
-
    
