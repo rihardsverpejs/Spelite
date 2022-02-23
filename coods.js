@@ -54,8 +54,8 @@ function iliketomoveit (wow) {
  function davana_maini_vietu () {
    
    ctx.clearRect(0, 0, lauks.width, lauks.height);
-   davx_ass = lokacija(lauks.width);
-   davy_ass = lokacija(lauks.height);
+   davx_ass = lokacija(lauks.width - davanas_bilde.width);
+   davy_ass = lokacija(lauks.height - davanas_bilde.height);
    } 
 
    
