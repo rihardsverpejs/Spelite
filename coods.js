@@ -45,9 +45,10 @@ function paradies () {
       document.getElementById("kok").innerHTML= "Rezultāts: " + (rezultats+1)
       rezultats += 1;
       davana_eksiste=0;
-      zooms += 10;   //šis jasalabo
+      zooms += 10;   
       }
-   } 
+   } //uzlikt ka pie noteikta sasniegta atruma uzvar speli
+   //ja dabu 0 lai sak spamoties allert vai kaut kas tamlidzigs
 
 setInterval(paradies, 25);
 function iliketomoveit (wow) {
