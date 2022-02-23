@@ -7,6 +7,7 @@ var davy_ass;
 var davana_eksiste=0;
 var x_ass_pieaugums=0;
 var y_ass_pieaugums=0;
+var rezultats = 0;
 var davanas_bilde = new Image();
 davanas_bilde.src = "davanu.png"
 var snata = new Image();
@@ -19,6 +20,9 @@ function paradies () {
       davana_maini_vietu();
    }
    ctx.clearRect(0, 0, lauks.width, lauks.height);
+   ctx.fillStyle= "purple";
+   ctx.font = "20px Arial";
+   ctx.fillText(`Rezultāts: ${rezultats}`, 0, 20);
    ctx.drawImage(snata, x_ass, y_ass);
    ctx.drawImage(davanas_bilde, davx_ass, davy_ass);
    x_ass = x_ass+x_ass_pieaugums;
@@ -39,10 +43,10 @@ function paradies () {
 
 setInterval(paradies, 25);
 function iliketomoveit (wow) {
- if (wow.keyCode == 39 && x_ass < lauks.width-snata.width) {x_ass_pieaugums = 2; y_ass_pieaugums=0} 
- if (wow.keyCode == 40 && y_ass < lauks.height-snata.height) {y_ass_pieaugums =  2; x_ass_pieaugums = 0} 
- if (wow.keyCode == 37 && x_ass > 0) {x_ass_pieaugums =  -2; y_ass_pieaugums = 0}
- if (wow.keyCode == 38 && y_ass > 0) {y_ass_pieaugums =  -2; x_ass_pieaugums = 0}
+ if (wow.keyCode == 39 && x_ass < lauks.width-snata.width) {x_ass_pieaugums = 20; y_ass_pieaugums=0} 
+ if (wow.keyCode == 40 && y_ass < lauks.height-snata.height) {y_ass_pieaugums =  20; x_ass_pieaugums = 0} 
+ if (wow.keyCode == 37 && x_ass > 0) {x_ass_pieaugums =  -20; y_ass_pieaugums = 0}
+ if (wow.keyCode == 38 && y_ass > 0) {y_ass_pieaugums =  -20; x_ass_pieaugums = 0}
  }
  addEventListener("keydown", iliketomoveit);
 
