@@ -8,6 +8,7 @@ var davana_eksiste=0;
 var x_ass_pieaugums=0;
 var y_ass_pieaugums=0;
 var rezultats = 0;
+var zooms = 0;
 var davanas_bilde = new Image();
 davanas_bilde.src = "davanu.png"
 var snata = new Image();
@@ -44,16 +45,16 @@ function paradies () {
       document.getElementById("kok").innerHTML= "Rezultāts: " + (rezultats+1)
       rezultats += 1;
       davana_eksiste=0;
-      ;
+      zooms= zooms + 100;
       }
    } 
 
 setInterval(paradies, 25);
 function iliketomoveit (wow) {
- if (wow.keyCode == 39 && x_ass < lauks.width-snata.width) {x_ass_pieaugums = 10; y_ass_pieaugums=0} 
- if (wow.keyCode == 40 && y_ass < lauks.height-snata.height) {y_ass_pieaugums =  10; x_ass_pieaugums = 0} 
- if (wow.keyCode == 37 && x_ass > 0) {x_ass_pieaugums =  -10; y_ass_pieaugums = 0}
- if (wow.keyCode == 38 && y_ass > 0) {y_ass_pieaugums =  -10; x_ass_pieaugums = 0}
+ if (wow.keyCode == 39 && x_ass < lauks.width-snata.width) {x_ass_pieaugums = zooms + 10; y_ass_pieaugums=0} 
+ if (wow.keyCode == 40 && y_ass < lauks.height-snata.height) {y_ass_pieaugums = zooms + 10; x_ass_pieaugums = 0} 
+ if (wow.keyCode == 37 && x_ass > 0) {x_ass_pieaugums = zooms -10; y_ass_pieaugums = 0}
+ if (wow.keyCode == 38 && y_ass > 0) {y_ass_pieaugums = zooms  -10; x_ass_pieaugums = 0}
  }
  addEventListener("keydown", iliketomoveit);
 
