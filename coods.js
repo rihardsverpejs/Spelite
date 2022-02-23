@@ -30,7 +30,7 @@ function paradies () {
    x_ass = x_ass+x_ass_pieaugums;
    y_ass = y_ass + y_ass_pieaugums;
    if (x_ass <= 0){
-      x_ass=0
+      x_ass=0             //seit visur vajag sataisit ka nomirst un jauztaaisa ari kas notiek ja nomirst
    }
    if (x_ass >= lauks.width-snata.width){
       x_ass=lauks.width-snata.width
@@ -45,13 +45,13 @@ function paradies () {
       document.getElementById("kok").innerHTML= "Rezultāts: " + (rezultats+1)
       rezultats += 1;
       davana_eksiste=0;
-      zooms= zooms + 100;
+      zooms += 10;   //šis jasalabo
       }
    } 
 
 setInterval(paradies, 25);
 function iliketomoveit (wow) {
- if (wow.keyCode == 39 && x_ass < lauks.width-snata.width) {x_ass_pieaugums = zooms + 10; y_ass_pieaugums=0} 
+ if (wow.keyCode == 39 && x_ass < lauks.width-snata.width) {x_ass_pieaugums = zooms + 10; y_ass_pieaugums=0} //japieliek klat lai grieztos
  if (wow.keyCode == 40 && y_ass < lauks.height-snata.height) {y_ass_pieaugums = zooms + 10; x_ass_pieaugums = 0} 
  if (wow.keyCode == 37 && x_ass > 0) {x_ass_pieaugums = zooms -10; y_ass_pieaugums = 0}
  if (wow.keyCode == 38 && y_ass > 0) {y_ass_pieaugums = zooms  -10; x_ass_pieaugums = 0}
