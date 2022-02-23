@@ -44,6 +44,7 @@ function paradies () {
       y_ass= lauks.height-snata.height
    }
    if (Sagraba(x_ass, y_ass, snata, davx_ass, davy_ass, davanas_bilde)) {
+      document.getElementById("kok").innerHTML= "Rezultāts:" + rezultats;
       rezultats= + 1;
       davx_ass= -davanas_bilde.width;
       }
