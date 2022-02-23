@@ -44,9 +44,10 @@ function paradies () {
       y_ass= lauks.height-snata.height
    }
    if (Sagraba(x_ass, y_ass, snata, davx_ass, davy_ass, davanas_bilde)) {
-      document.getElementById("kok").innerHTML= "Rezultāts:" + rezultats;
-      rezultats= + 1;
-      davx_ass= -davanas_bilde.width;
+      document.getElementById("kok").innerHTML= "Rezultāts:" + (rezultats+1)
+      rezultats += 1;
+      davana_eksiste=0;
+      ;
       }
    } 
 
@@ -70,4 +71,4 @@ function iliketomoveit (wow) {
    davx_ass = lokacija(lauks.width - davanas_bilde.width);
    davy_ass = lokacija(lauks.height - davanas_bilde.height);
    } 
-   
+
