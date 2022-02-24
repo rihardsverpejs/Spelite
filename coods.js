@@ -58,7 +58,8 @@ function gameover(){
    ctx.fillStyle= "purple";
    ctx.font = "30px Arial";
    ctx.fillText("GAME OVER", 200, 200);
-   
+   if (snata_eksiste==0 && rezultats==0){alert("Tu stulbs vai kas?")}
+   if (snata_eksiste==0 && rezultats>10)[alert("Lūdzu aizej paošnāt zāli!")]
 }
 
 setInterval(paradies, 25);
@@ -67,8 +68,8 @@ function iliketomoveit (wow) {
  if (wow.keyCode == 40 && y_ass < lauks.height-snata.height) {y_ass_pieaugums = zooms + 10; x_ass_pieaugums = 0;snata.src = "santaDown.png"} 
  if (wow.keyCode == 37 && x_ass > 0) {x_ass_pieaugums = -zooms -10; y_ass_pieaugums = 0;snata.src = "santaRight.png"}
  if (wow.keyCode == 38 && y_ass > 0) {y_ass_pieaugums = -zooms  -10; x_ass_pieaugums = 0;snata.src = "santaTop.png"}
- if (wow.keyCode == 13 && snata_eksiste==0){snata_eksiste=1; rezultats=0; x_ass=1; y_ass=1; x_ass_pieaugums=0;y_ass_pieaugums=0; zooms = 0; document.getElementById("kok").innerHTML= "Score: 0"}
- }
+ if (wow.keyCode == 13 && snata_eksiste==0){snata_eksiste=1; rezultats=0; x_ass=1; y_ass=1; x_ass_pieaugums=0;y_ass_pieaugums=0;snata.src ="snata1.png"; zooms = 0; document.getElementById("kok").innerHTML= "Score: 0"}
+}
  addEventListener("keydown", iliketomoveit);
 
  function lokacija(up_to) { 
@@ -82,4 +83,3 @@ function iliketomoveit (wow) {
    davx_ass = lokacija(lauks.width - davanas_bilde.width);
    davy_ass = lokacija(lauks.height - davanas_bilde.height);
    } 
-
