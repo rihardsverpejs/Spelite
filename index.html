@@ -2,14 +2,24 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <link rel="stylesheet" href="style.css"> 
     </head>
     <body>
        
-        <img style="display: block; margin-left: 400px;" src="SantaBallz.png">
-        <canvas id="lauks" width=1000 height=500 style="border:1px solid">
+        <img style="display: block; " src="SantaBallz.png" class="image"> 
+            <div class="container">
+                <div class="row">
+                    <div class="col-1">
 
-        </canvas>
-        <h2 id="kok">Score: 0 </h2>
+                    </div>
+                    <div class="col-2">
+                    <canvas id="lauks" width=1000 height=500 style="border:1px solid;  "></canvas> 
+                    </div>
+                    <div class="col-3">
+                    <h2 id="kok">Score: 0 </h2>
+                    </div>
+                </div>
+            </div>
         <script src="./coods.js"></script>
     </body>
 </html>
