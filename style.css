@@ -13,9 +13,9 @@ canvas {
     margin-right: auto;
 }
 #kok {
-    border: 2px solid blueviolet;
+    border: 3px solid blueviolet;
     border-radius: 5px;
-    padding: 5px;
+    padding: 10px;
     
     margin-top: 100px;
 }

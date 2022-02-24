@@ -56,8 +56,9 @@ function paradies () {
 function gameover(){
    ctx.clearRect(0, 0, lauks.width, lauks.height)
    ctx.fillStyle= "purple";
-   ctx.font = "30px Arial";
-   ctx.fillText("GAME OVER", 200, 200);
+   ctx.font = " bold 50px Arial";
+   ctx.fillText("GAME OVER", 330, 220);
+   ctx.fillText("Press enter to try again", 220,280)
    if (snata_eksiste==0 && rezultats==0){alert("Tu stulbs vai kas?")}
    if (snata_eksiste==0 && rezultats>=10)[alert("Lūdzu aizej paošnāt zāli!")]
 }
