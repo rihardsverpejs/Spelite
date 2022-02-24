@@ -59,7 +59,7 @@ function gameover(){
    ctx.font = "30px Arial";
    ctx.fillText("GAME OVER", 200, 200);
    if (snata_eksiste==0 && rezultats==0){alert("Tu stulbs vai kas?")}
-   if (snata_eksiste==0 && rezultats>10)[alert("Lūdzu aizej paošnāt zāli!")]
+   if (snata_eksiste==0 && rezultats>=10)[alert("Lūdzu aizej paošnāt zāli!")]
 }
 
 setInterval(paradies, 25);
