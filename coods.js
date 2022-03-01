@@ -18,7 +18,7 @@ var dziesma= new Audio();
 dziesma.src = "Rickroll.mp3";
 var drive= new Audio();
 drive.src = "drive.mp3"
-var alerted = localStorage.getItem('alerted') || '';
+var alerted = 0;
 
 function play(){
    dziesma.play()
@@ -68,8 +68,8 @@ function gameover(){
    ctx.fillText("GAME OVER", 330, 220);
    ctx.fillText("Press enter to try again", 220,280)
 
-   if (snata_eksiste==0 && rezultats==0 && alerted != 'yes'){alert("Tu stulbs vai kas?"); play(); localStorage.setItem('alerted','yes');}
-   if (snata_eksiste==0 && rezultats>=10)[alert("Lūdzu aizej paošnāt zāli!"), drive.play()]
+   if (snata_eksiste==0 && rezultats==0 && alerted == 0){alert("Tu stulbs vai kas?"); play(); alerted=1;}
+   if (snata_eksiste==0 && rezultats>=10 && alerted == 0)[alert("Lūdzu aizej paošnāt zāli!"), drive.play(), alerted=1]
 
 }
 
@@ -79,7 +79,7 @@ function iliketomoveit (wow) {
  if (wow.keyCode == 40 && y_ass < lauks.height-snata.height) {y_ass_pieaugums = zooms + 10; x_ass_pieaugums = 0;snata.src = "santaDown.png"} 
  if (wow.keyCode == 37 && x_ass > 0) {x_ass_pieaugums = -zooms -10; y_ass_pieaugums = 0;snata.src = "santaRight.png"}
  if (wow.keyCode == 38 && y_ass > 0) {y_ass_pieaugums = -zooms  -10; x_ass_pieaugums = 0;snata.src = "santaTop.png"}
- if (wow.keyCode == 13 && snata_eksiste==0){snata_eksiste=1; rezultats=0; x_ass=1; y_ass=1; x_ass_pieaugums=0;y_ass_pieaugums=0;snata.src ="snata1.png"; zooms = 0; document.getElementById("kok").innerHTML= "Score: 0"}
+ if (wow.keyCode == 13 && snata_eksiste==0){snata_eksiste=1; rezultats=0; x_ass=1; y_ass=1; x_ass_pieaugums=0;y_ass_pieaugums=0;snata.src ="snata1.png"; alerted=0; zooms = 0; document.getElementById("kok").innerHTML= "Score: 0"}
 }
  addEventListener("keydown", iliketomoveit);
 
