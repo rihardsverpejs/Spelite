@@ -59,14 +59,14 @@ function paradies () {
    }
    } //uzlikt ka pie noteikta sasniegta atruma uzvar speli
    //ja dabu 0 lai sak spamoties allert vai kaut kas tamlidzigs
-function gameover(){
+function gameover(){ 
    ctx.clearRect(0, 0, lauks.width, lauks.height)
    ctx.fillStyle= "purple";
    ctx.font = " bold 50px Arial";
    ctx.fillText("GAME OVER", 330, 220);
    ctx.fillText("Press enter to try again", 220,280)
    if (snata_eksiste==0 && rezultats==0){alert("Tu stulbs vai kas?")}
-   if (snata_eksiste==0 && rezultats>=10)[alert("Lūdzu aizej paošnāt zāli!")]
+   if (snata_eksiste==0 && rezultats>=10)[alert("Lūdzu aizej paošnāt zāli!")] 
 }
 
 setInterval(paradies, 25);
