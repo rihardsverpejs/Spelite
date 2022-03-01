@@ -16,6 +16,11 @@ canvas {
     border: 3px solid blueviolet;
     border-radius: 5px;
     padding: 10px;
-    
+    background-color: rgba(240, 248, 255, 0.74);
     margin-top: 100px;
+}
+body {
+    background-image: url('https://mocah.org/uploads/posts/550547-nature-landscape.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
