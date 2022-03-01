@@ -14,7 +14,12 @@ var davanas_bilde = new Image();
 davanas_bilde.src = "davanu.png"
 var snata = new Image();
 snata.src = "snata1.png";
+var dziesma= new Audio();
+dziesma.src = "Rickroll.mp3"
 
+function play(){
+   dziesma.play()
+}
 function Sagraba(x_ass, y_ass, snata, davx_ass, davy_ass, davanas_bilde) {
    if (x_ass >= davx_ass+davanas_bilde.width || x_ass+snata.width <= davx_ass) return false;
    if (y_ass >= davy_ass+davanas_bilde.height || y_ass+snata.height <= davy_ass) return false;
@@ -49,7 +54,8 @@ function paradies () {
       zooms += 1;   
       }
    if (snata_eksiste==0){
-      gameover()
+      gameover();
+      play()
    }
    } //uzlikt ka pie noteikta sasniegta atruma uzvar speli
    //ja dabu 0 lai sak spamoties allert vai kaut kas tamlidzigs
