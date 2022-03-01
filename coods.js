@@ -19,6 +19,8 @@ dziesma.src = "Rickroll.mp3";
 var drive= new Audio();
 drive.src = "drive.mp3"
 var alerted = 0;
+var pickup= new Audio();
+pickup.src = "minecraft.mp3"
 
 function play(){
    dziesma.play()
@@ -55,6 +57,7 @@ function paradies () {
       rezultats += 1;
       davana_eksiste=0;
       zooms += 1;   
+      pickup.play(); 
       }
    if (snata_eksiste==0){
       gameover()

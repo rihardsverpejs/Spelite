@@ -11,6 +11,9 @@ canvas {
 .image {
     margin-left: auto;
     margin-right: auto;
+    margin-top: 20px;
+    height: 100px;
+    width: 300px
 }
 #kok {
     border: 3px solid blueviolet;
