@@ -15,7 +15,10 @@ davanas_bilde.src = "davanu.png"
 var snata = new Image();
 snata.src = "snata1.png";
 var dziesma= new Audio();
-dziesma.src = "Rickroll.mp3"
+dziesma.src = "Rickroll.mp3";
+var drive= new Audio();
+drive.src = "drive.mp3"
+var alerted = localStorage.getItem('alerted') || '';
 
 function play(){
    dziesma.play()
@@ -54,8 +57,7 @@ function paradies () {
       zooms += 1;   
       }
    if (snata_eksiste==0){
-      gameover();
-      play()
+      gameover()
    }
    } //uzlikt ka pie noteikta sasniegta atruma uzvar speli
    //ja dabu 0 lai sak spamoties allert vai kaut kas tamlidzigs
@@ -65,8 +67,13 @@ function gameover(){
    ctx.font = " bold 50px Arial";
    ctx.fillText("GAME OVER", 330, 220);
    ctx.fillText("Press enter to try again", 220,280)
+<<<<<<< Updated upstream
    if (snata_eksiste==0 && rezultats==0){alert("Tu stulbs vai kas?")}
    if (snata_eksiste==0 && rezultats>=10)[alert("Lūdzu aizej paošnāt zāli!")] 
+=======
+   if (snata_eksiste==0 && rezultats==0 && alerted != 'yes'){alert("Tu stulbs vai kas?"); play(); localStorage.setItem('alerted','yes');}
+   if (snata_eksiste==0 && rezultats>=10)[alert("Lūdzu aizej paošnāt zāli!"), drive.play()]
+>>>>>>> Stashed changes
 }
 
 setInterval(paradies, 25);
