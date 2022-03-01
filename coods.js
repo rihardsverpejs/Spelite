@@ -20,7 +20,11 @@ var drive= new Audio();
 drive.src = "drive.mp3"
 var alerted = 0;
 var pickup= new Audio();
-pickup.src = "minecraft.mp3"
+pickup.src = "minecraft.mp3";
+var death = new Audio();
+death.src = "death.mp3";
+death.preload = "auto"
+
 
 function play(){
    dziesma.play()
@@ -65,7 +69,7 @@ function paradies () {
    } //uzlikt ka pie noteikta sasniegta atruma uzvar speli
    //ja dabu 0 lai sak spamoties allert vai kaut kas tamlidzigs
 function gameover(){ 
-   ctx.clearRect(0, 0, lauks.width, lauks.height)
+   ctx.clearRect(0, 0, lauks.width, lauks.height); death.play();
    ctx.fillStyle= "purple";
    ctx.font = " bold 50px Arial";
    ctx.fillText("GAME OVER", 330, 220);
