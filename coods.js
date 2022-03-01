@@ -23,7 +23,7 @@ var pickup= new Audio();
 pickup.src = "minecraft.mp3";
 var death = new Audio();
 death.src = "death.mp3";
-death.preload = "auto"
+
 
 
 function play(){
