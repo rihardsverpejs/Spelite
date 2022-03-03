@@ -26,12 +26,12 @@ var played = 0;
 
 
 
-function Sagraba(x_ass, y_ass, snata, davx_ass, davy_ass, davanas_bilde) {
+function Sagraba(x_ass, y_ass, snata, davx_ass, davy_ass, davanas_bilde) { //funkcija kas parbauda kad salavecis savāc dāvanu
    if (x_ass >= davx_ass+davanas_bilde.width || x_ass+snata.width <= davx_ass) return false;
    if (y_ass >= davy_ass+davanas_bilde.height || y_ass+snata.height <= davy_ass) return false;
    return true;
    }
-function paradies () {
+function paradies () {  //funkcija kas izveido santas un dāvanas bildi
    if (davana_eksiste==0){
       davana_eksiste = 1;
       davana_maini_vietu();
@@ -67,7 +67,7 @@ function paradies () {
    }
    } //uzlikt ka pie noteikta sasniegta atruma uzvar speli
    //ja dabu 0 lai sak spamoties allert vai kaut kas tamlidzigs
-function gameover(){ 
+function gameover(){ //funkcija kas pasaka kas notiek kad salavecis nomirst/ieskrien sienā
    
    ctx.clearRect(0, 0, lauks.width, lauks.height); 
   
@@ -84,8 +84,8 @@ function gameover(){
 
 }
 
-setInterval(paradies, 25);
-function iliketomoveit (wow) {
+setInterval(paradies, 25); //pasaka cik bieži jaizpildās funkcijai parādies
+function iliketomoveit (wow) { //funkcija kas saistīta ar salaveča kustību un pogu spiešanu
  if (wow.keyCode == 39 && x_ass < lauks.width-snata.width) {x_ass_pieaugums = zooms + 10; y_ass_pieaugums=0;snata.src = "snata1.png"} //japieliek klat lai grieztos
  if (wow.keyCode == 40 && y_ass < lauks.height-snata.height) {y_ass_pieaugums = zooms + 10; x_ass_pieaugums = 0;snata.src = "santaDown.png"} 
  if (wow.keyCode == 37 && x_ass > 0) {x_ass_pieaugums = -zooms -10; y_ass_pieaugums = 0;snata.src = "santaRight.png"}
@@ -117,14 +117,14 @@ function iliketomoveit (wow) {
    document.getElementById("kok").innerHTML= "Score: 0"
    }
 }
- addEventListener("keydown", iliketomoveit);
+ addEventListener("keydown", iliketomoveit); //pārbauda vai ir uzspiesta kāda poga
 
- function lokacija(up_to) { 
+ function lokacija(up_to) { //izveido random lokāciju kur parādīsies dāvana
    n = Math.floor(Math.random() * up_to) + 1;  
     return(n);  
  }
 
- function davana_maini_vietu () {
+ function davana_maini_vietu () { //nosaka vietu kur var parādīties dāvana
    
    ctx.clearRect(0, 0, lauks.width, lauks.height);
    davx_ass = lokacija(lauks.width - davanas_bilde.width);
