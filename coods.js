@@ -26,9 +26,6 @@ death.src = "death.mp3";
 
 
 
-function play(){
-   dziesma.play()
-}
 function Sagraba(x_ass, y_ass, snata, davx_ass, davy_ass, davanas_bilde) {
    if (x_ass >= davx_ass+davanas_bilde.width || x_ass+snata.width <= davx_ass) return false;
    if (y_ass >= davy_ass+davanas_bilde.height || y_ass+snata.height <= davy_ass) return false;
@@ -57,7 +54,9 @@ function paradies () {
       snata_eksiste=0;
    }
    if (Sagraba(x_ass, y_ass, snata, davx_ass, davy_ass, davanas_bilde)) {
-      document.getElementById("kok").innerHTML= "Score: " + (rezultats+1)
+      document.getElementById("kok").innerHTML= "Score: " + (rezultats+1);
+      pickup.pause();
+      pickup.currentTime = 0;
       rezultats += 1;
       davana_eksiste=0;
       zooms += 1;   
@@ -69,13 +68,14 @@ function paradies () {
    } //uzlikt ka pie noteikta sasniegta atruma uzvar speli
    //ja dabu 0 lai sak spamoties allert vai kaut kas tamlidzigs
 function gameover(){ 
-   ctx.clearRect(0, 0, lauks.width, lauks.height); death.play();
+   
+   ctx.clearRect(0, 0, lauks.width, lauks.height); death.play();death.loop = false;
    ctx.fillStyle= "purple";
    ctx.font = " bold 50px Arial";
    ctx.fillText("GAME OVER", 330, 220);
    ctx.fillText("Press enter to try again", 220,280)
-
-   if (snata_eksiste==0 && rezultats==0 && alerted == 0){alert("Tu stulbs vai kas?"); play(); alerted=1;}
+   
+   if (snata_eksiste==0 && rezultats==0 && alerted == 0){alert("Tu stulbs vai kas?"); dziesma.play(); alerted=1;}
    if (snata_eksiste==0 && rezultats>=10 && alerted == 0)[alert("Lūdzu aizej paošnāt zāli!"), drive.play(), alerted=1]
 
 }
@@ -86,7 +86,12 @@ function iliketomoveit (wow) {
  if (wow.keyCode == 40 && y_ass < lauks.height-snata.height) {y_ass_pieaugums = zooms + 10; x_ass_pieaugums = 0;snata.src = "santaDown.png"} 
  if (wow.keyCode == 37 && x_ass > 0) {x_ass_pieaugums = -zooms -10; y_ass_pieaugums = 0;snata.src = "santaRight.png"}
  if (wow.keyCode == 38 && y_ass > 0) {y_ass_pieaugums = -zooms  -10; x_ass_pieaugums = 0;snata.src = "santaTop.png"}
- if (wow.keyCode == 13 && snata_eksiste==0){snata_eksiste=1; rezultats=0; x_ass=1; y_ass=1; x_ass_pieaugums=0;y_ass_pieaugums=0;snata.src ="snata1.png"; alerted=0; zooms = 0; document.getElementById("kok").innerHTML= "Score: 0"}
+ if (wow.keyCode == 13 && snata_eksiste==0){snata_eksiste=1; rezultats=0; x_ass=1; y_ass=1; x_ass_pieaugums=0;y_ass_pieaugums=0;snata.src ="snata1.png"; alerted=0; zooms = 0; document.getElementById("kok").innerHTML= "Score: 0";
+ dziesma.pause();
+ dziesma.currentTime = 0;
+ drive.pause();
+ drive.currentTime = 0;
+}
 }
  addEventListener("keydown", iliketomoveit);
 
