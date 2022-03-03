@@ -22,6 +22,8 @@ var pickup= new Audio(); //mainīgais, kas nosaka dāvanas savākšanas audio
 pickup.src = "minecraft.mp3"; //links uz šo audio
 var death = new Audio(); //mainīgais, kas nosaka nomiršanas audio
 death.src = "death.mp3"; //links uz šo audio
+var played = 0;
+
 
 
 function Sagraba(x_ass, y_ass, snata, davx_ass, davy_ass, davanas_bilde) {
@@ -67,13 +69,18 @@ function paradies () {
    //ja dabu 0 lai sak spamoties allert vai kaut kas tamlidzigs
 function gameover(){ 
    
-   ctx.clearRect(0, 0, lauks.width, lauks.height); death.play();death.loop = false;
+   ctx.clearRect(0, 0, lauks.width, lauks.height); 
+  
+   
    ctx.fillStyle= "purple";
    ctx.font = " bold 50px Arial";
    ctx.fillText("GAME OVER", 330, 220);
    ctx.fillText("Press enter to try again", 220,280)
+   if (played ==0 ){death.play();
+   played=1;
+   }
    if (snata_eksiste==0 && rezultats==0 && alerted == 0){alert("Tu stulbs vai kas?"); dziesma.play(); alerted=1;}
-   if (snata_eksiste==0 && rezultats>=10 && alerted == 0)[alert("Lūdzu aizej paošnāt zāli!"), drive.play(), alerted=1]
+   if (snata_eksiste==0 && rezultats>=10 && alerted == 0){alert("Lūdzu aizej paošnāt zāli!"), drive.play(), alerted=1}
 
 }
 
@@ -96,6 +103,7 @@ function iliketomoveit (wow) {
    dziesma.currentTime = 0;
    drive.pause();
    drive.currentTime = 0;
+   played=0
 }
  if (wow.keyCode == 13 && snata_eksiste==0){
    snata_eksiste=1; 
