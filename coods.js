@@ -1,34 +1,29 @@
-var ctx = document.getElementById("lauks").getContext("2d");
-
-var x_ass = 1;
-var y_ass = 1;
-var davx_ass;
-var davy_ass;
-var davana_eksiste=0;
-var x_ass_pieaugums=0;
-var y_ass_pieaugums=0;
-var rezultats = 0;
-var zooms = 0;
-var snata_eksiste = 1;
-var davanas_bilde = new Image();
-davanas_bilde.src = "davanu.png"
-var snata = new Image();
-snata.src = "snata1.png";
-var dziesma= new Audio();
-dziesma.src = "Rickroll.mp3";
-var drive= new Audio();
-drive.src = "drive.mp3"
-var alerted = 0;
-var pickup= new Audio();
-pickup.src = "minecraft.mp3";
-var death = new Audio();
-death.src = "death.mp3";
-
+var ctx = document.getElementById("lauks").getContext("2d"); //NOSAKA VISU CANVAS VIETU KUR VISS NOTIEK
+var x_ass = 1;  //    x ass priekšs salaveča bildes
+var y_ass = 1;  //    y ass priekšs salaveča bildes
+var davx_ass;  //    x ass priekšs dāvanas bildes
+var davy_ass;  //    y ass priekšs dāvanas bildes
+var davana_eksiste=0;  //mainīgais  kas nosaka vai eksistē vai neeksistē dāvana
+var x_ass_pieaugums=0;  //mainīgais kas noteiks x ass ātrumu
+var y_ass_pieaugums=0;  //mainīgais kas noteiks y ass ātrumu
+var rezultats = 0;  //mainīgais kas nosaka rezultātu
+var zooms = 0;  //mainīgais kas nosaka par cik palielināsies ātrums pēc dāvanas savākšanas
+var snata_eksiste = 1; //mainīgais, kas nosaka vai eksistē vai neeksistē salavecis
+var davanas_bilde = new Image(); //mainīgais, kas nosaka dāvanas bildi
+davanas_bilde.src = "davanu.png" //links uz dāvanas bildi
+var snata = new Image(); //mainīgais, kas nosaka salaveča bildi
+snata.src = "snata1.png"; //links uz salaveča bildi
+var dziesma= new Audio(); //mainīgais, kas nosaka nomiršanas pie 0 audio
+dziesma.src = "Rickroll.mp3"; //links uz šo audio
+var drive= new Audio(); // mainīgais, kas nosaka nomiršanas pie 10vai< audio
+drive.src = "drive.mp3" //links uz šo audio
+var alerted = 0; //mainīgais, kas pasaka lai alert parādas tikai vienreiz
+var pickup= new Audio(); //mainīgais, kas nosaka dāvanas savākšanas audio
+pickup.src = "minecraft.mp3"; //links uz šo audio
+var death = new Audio(); //mainīgais, kas nosaka nomiršanas audio
+death.src = "death.mp3"; //links uz šo audio
 
 
-function play(){
-   dziesma.play()
-}
 function Sagraba(x_ass, y_ass, snata, davx_ass, davy_ass, davanas_bilde) {
    if (x_ass >= davx_ass+davanas_bilde.width || x_ass+snata.width <= davx_ass) return false;
    if (y_ass >= davy_ass+davanas_bilde.height || y_ass+snata.height <= davy_ass) return false;
@@ -75,7 +70,7 @@ function gameover(){
    ctx.fillText("GAME OVER", 330, 220);
    ctx.fillText("Press enter to try again", 220,280)
 
-   if (snata_eksiste==0 && rezultats==0 && alerted == 0){alert("Tu stulbs vai kas?"); play(); alerted=1;}
+   if (snata_eksiste==0 && rezultats==0 && alerted == 0){alert("Tu stulbs vai kas?"); dziesma.play(); alerted=1;}
    if (snata_eksiste==0 && rezultats>=10 && alerted == 0)[alert("Lūdzu aizej paošnāt zāli!"), drive.play(), alerted=1]
 
 }
@@ -86,7 +81,17 @@ function iliketomoveit (wow) {
  if (wow.keyCode == 40 && y_ass < lauks.height-snata.height) {y_ass_pieaugums = zooms + 10; x_ass_pieaugums = 0;snata.src = "santaDown.png"} 
  if (wow.keyCode == 37 && x_ass > 0) {x_ass_pieaugums = -zooms -10; y_ass_pieaugums = 0;snata.src = "santaRight.png"}
  if (wow.keyCode == 38 && y_ass > 0) {y_ass_pieaugums = -zooms  -10; x_ass_pieaugums = 0;snata.src = "santaTop.png"}
- if (wow.keyCode == 13 && snata_eksiste==0){snata_eksiste=1; rezultats=0; x_ass=1; y_ass=1; x_ass_pieaugums=0;y_ass_pieaugums=0;snata.src ="snata1.png"; alerted=0; zooms = 0; document.getElementById("kok").innerHTML= "Score: 0"}
+ if (wow.keyCode == 13 && snata_eksiste==0){
+   snata_eksiste=1; 
+   rezultats=0; x_ass=1; 
+   y_ass=1;
+   x_ass_pieaugums=0;
+   y_ass_pieaugums=0;
+   snata.src ="snata1.png";
+   alerted=0;
+   zooms = 0;
+   document.getElementById("kok").innerHTML= "Score: 0"
+   }
 }
  addEventListener("keydown", iliketomoveit);
 
