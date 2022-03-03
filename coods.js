@@ -80,7 +80,7 @@ function gameover(){ //funkcija kas pasaka kas notiek kad salavecis nomirst/iesk
    played=1;
    }
    if (snata_eksiste==0 && rezultats==0 && alerted == 0){alert("Tu stulbs vai kas?"); dziesma.play(); alerted=1;}
-   if (snata_eksiste==0 && rezultats>=10 && alerted == 0){alert("Lūdzu aizej paošnāt zāli!"), drive.play(), alerted=1}
+   if (snata_eksiste==0 && rezultats>=15 && alerted == 0){alert("Lūdzu aizej paošnāt zāli!"), drive.play(), alerted=1}
 
 }
 
