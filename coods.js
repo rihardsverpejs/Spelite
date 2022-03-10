@@ -22,7 +22,7 @@ var pickup= new Audio(); //mainīgais, kas nosaka dāvanas savākšanas audio
 pickup.src = "minecraft.mp3"; //links uz šo audio
 var death = new Audio(); //mainīgais, kas nosaka nomiršanas audio
 death.src = "death.mp3"; //links uz šo audio
-var played = 0;
+var played = 0; //mainīgias, kas nosaka vai audio jau bija atskaņots
 
 
 
